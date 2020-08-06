@@ -12,6 +12,11 @@
 @import "basics/typography";
 
 // cmps
+@import "cmps/Footer.scss";
+@import "cmps/Header.scss";
+@import "cmps/SearchContainer.scss";
+@import "cmps/SearchContainer/CollectionList.scss";
+@import "cmps/SearchContainer/CollectionPreview.scss";
 
 // pages
 @import "pages/Home.scss";

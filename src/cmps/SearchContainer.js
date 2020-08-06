@@ -60,11 +60,11 @@ export default function SearchContainer() {
                 <div className="btn next" onClick={goToNextPage}>
                     <div>next</div>
                 </div>
-                <div className="pointer" style={{ height: '42px', width: '42px' }} onClick={() => toggleViewList('list')}>
-                    <ListIcon style={{ height: '100%', width: '100%' }}/>
+                <div className="pointer view-icon-container" onClick={() => toggleViewList('list')}>
+                    <ListIcon />
                 </div>
-                <div className="pointer" style={{ height: '42px', width: '42px' }} onClick={() => toggleViewList('tiles')}>
-                    <ViewModuleIcon style={{ height: '100%', width: '100%' }}/>
+                <div className="pointer view-icon-container" onClick={() => toggleViewList('tiles')}>
+                    <ViewModuleIcon />
                 </div>
             </div>
         </div>

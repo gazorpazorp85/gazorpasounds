@@ -1,0 +1,11 @@
+.tiles :not(:last-child) {
+    margin-inline-end: 15px;
+}
+
+.list {
+    flex-direction: column;
+}
+
+.collection-list-container {
+    margin: 10px 0px;
+}

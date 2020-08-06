@@ -1,0 +1,13 @@
+.view-icon-container {
+    height: 42px;
+    width: 42px;
+    
+    .MuiSvgIcon-root {
+        height: 100%;
+        width: 100%;
+    }
+
+    .MuiSvgIcon-root:hover {
+        fill: $clr3;
+    }
+}

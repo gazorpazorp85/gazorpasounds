@@ -1,0 +1,32 @@
+.title-container {
+    background-color: $clr4;
+    border-bottom: 1px solid $clr1;
+    color: $clr1;
+    min-width: 70%;
+    height: 40px;
+    border-radius: 4px;
+    padding-inline-start: 10px;
+
+    &:hover {
+        color: $clr3;
+    }
+}
+
+.img-container {
+    height: 200px;
+    width: 200px;
+}
+
+.preview-screen {
+    opacity: 0;
+    position: absolute;
+    height: 200px;
+    width: 200px;
+    background-color: rgba(0, 0, 0, 0.74);
+    color: white;
+    padding: 0 10px;
+}
+
+.preview-screen:hover {
+    opacity: 1;
+}
