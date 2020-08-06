@@ -1,0 +1,25 @@
+.home-container {
+    background-color: $clr2;
+    color: $clr4;
+}
+
+.home-subcontainer {
+    width: 100%;
+}
+
+.logo-container {
+    align-self: center;
+    height: 250px;
+    width: 400px;
+    background-repeat: no-repeat;
+    background-size: 400px;
+    margin-top: 40px;
+}
+
+@include for-mobile-wide-layout {
+    .logo-container {
+        height: 150px;
+        width: 240px;
+        background-size: contain;
+    }
+}

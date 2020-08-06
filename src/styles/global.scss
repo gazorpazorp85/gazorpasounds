@@ -1,0 +1,17 @@
+// Setup
+@import "setup/functions";
+@import "setup/mixins";
+@import "setup/variables";
+
+// Basics
+@import "basics/base";
+@import "basics/buttons";
+@import "basics/helpers";
+@import "basics/input";
+@import "basics/layout";
+@import "basics/typography";
+
+// cmps
+
+// pages
+@import "pages/Home.scss";
