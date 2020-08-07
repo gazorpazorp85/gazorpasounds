@@ -10,7 +10,7 @@ import queryService from '../services/queryService';
 import soundService from '../services/soundService';
 import storageService from '../services/storageService';
 
-export default function SearchContainer() {
+export default function SearchContainer({ navigation, setCurrTrack, setNavigation }) {
 
     const [query, setQuery] = useState('');
     const [collection, setCollection] = useState('');
@@ -27,6 +27,7 @@ export default function SearchContainer() {
         try {
             const result = await soundService.getTracks(query);
             const { collection, next_href } = result;
+            setNavigation('search');
             setCollection(collection);
             setNextHref(next_href);
         } catch (err) {
@@ -53,20 +54,27 @@ export default function SearchContainer() {
     }
 
     return (
-        <div className="flex column full">
+        <div className="flex column">
             <SearchBar onSetQuery={onSetQuery} showSearch={showSearch} />
-            {collection && <CollectionList collection={collection} isListViewOn={isListViewOn}/>}
-            <div className="flex">
-                <div className="btn next" onClick={goToNextPage}>
-                    <div>next</div>
-                </div>
-                <div className="pointer view-icon-container" onClick={() => toggleViewList('list')}>
-                    <ListIcon />
-                </div>
-                <div className="pointer view-icon-container" onClick={() => toggleViewList('tiles')}>
-                    <ViewModuleIcon />
-                </div>
-            </div>
+            {collection && (navigation === 'search') &&
+                <div className="flex column full">
+                    <CollectionList
+                        collection={collection}
+                        isListViewOn={isListViewOn}
+                        setCurrTrack={setCurrTrack}
+                        setNavigation={setNavigation} />
+                    <div className="flex">
+                        <div className="btn next" onClick={goToNextPage}>
+                            <div>next</div>
+                        </div>
+                        <div className="pointer view-icon-container" onClick={() => toggleViewList('list')}>
+                            <ListIcon />
+                        </div>
+                        <div className="pointer view-icon-container" onClick={() => toggleViewList('tiles')}>
+                            <ViewModuleIcon />
+                        </div>
+                    </div>
+                </div>}
         </div>
     )
 }

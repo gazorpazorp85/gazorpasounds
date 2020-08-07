@@ -19,6 +19,7 @@ export default function SearchBar({ onSetQuery, showSearch }) {
             <div className="flex search-input-container">
                 <input id="search-bar" type="text" placeholder="Search" value={searchQuery}
                     onChange={inputChange} onKeyPress={checkKey} />
+                <span className="search-bar-icon"></span>
                 <div className="btn uppercase pointer" onClick={showSearch}>
                     <div>set</div>
                 </div>

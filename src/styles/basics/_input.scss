@@ -7,10 +7,21 @@
     font-family: inherit;
     font-size: rem(16px);
     text-indent: 35px;
+    margin-inline-end: 10px;
+}
+
+// #search-bar:-webkit-autofill,
+// #search-bar:-webkit-autofill:hover,
+// #search-bar:-webkit-autofill:focus,
+// #search-bar:-webkit-autofill:active {
+//     -webkit-box-shadow:0 0 0 30px white inset !important;
+// }
+
+.search-bar-icon {
     background-image: url(../../assets/icons/search-24.png);
     background-repeat: no-repeat;
     background-position: 5px 4px;
-    &:focus {
-        box-shadow: inset 0 0 0 2px #0079bf;
-    }
+    position: absolute;
+    height:30px;
+    width: 30px;
 }

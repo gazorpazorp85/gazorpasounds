@@ -2,14 +2,19 @@ import React from 'react';
 
 import defaultImg from '../../assets/icons/noartwork.png'
 
-export default function CollectionPreview({ isListViewOn, track }) {
+export default function CollectionPreview({ isListViewOn, setCurrTrack, setNavigation, track }) {
 
     const img = track.artwork_url ? track.artwork_url : defaultImg;
     const title = `${track.user.username} - ${track.title}`;
     const formatedTitle = (title.length > 70) ? title.substring(0, 65) + '...' : title;
 
+    const clickHandler = (track) => {
+        setCurrTrack(track);
+        setNavigation('image');
+    }
+
     return (
-        <div className="flex pointer">
+        <div className="flex pointer" onClick={() => clickHandler(track)}>
             {isListViewOn ?
                 <div className="flex align-center title-container">
                     <div>
