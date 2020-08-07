@@ -7,10 +7,11 @@ export default function RecentSearchesContainer({ setHistoryQuery }) {
     const lastQueries = storageService.load('lastQueries');
 
     return (
-        <div className="flex full column">
+        <div className="flex full column recent-searches-container">
+            <div className="uppercase searches-title">your last searches:</div>
             {lastQueries.map((query) => {
                 return (
-                    <div key={query.key}>
+                    <div className="search-item" key={query.key}>
                         <div className="pointer" onClick={() => setHistoryQuery(query.query)}>
                             {query.query}
                         </div>

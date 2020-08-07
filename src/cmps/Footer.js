@@ -8,8 +8,11 @@ export default function Footer() {
     return (
         <div className="flex footer-container">
             <div className="flex main-container footer-subcontainer">
-                <div className="credit-container">
-                    <span className="footer-title">gazorpasounds©</span> made by gazorpazorp85 for Edea
+                <div className="flex align-center credit-container">
+                    <span className="footer-title">gazorpasounds©</span> made by gazorpazorp85 for
+                    <a className="edea-link" href="http://www.edea.co.il/en/" target="blank">
+                        EDEA Applied Management Consulting Ltd.
+                    </a>
                 </div>
                 <div className="flex align-center social-icons-container">
                     <div className="flex social-icon-container">

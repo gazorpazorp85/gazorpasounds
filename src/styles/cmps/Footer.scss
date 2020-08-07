@@ -1,6 +1,15 @@
 .footer-title {
     font-family: luckiest-guy;
     letter-spacing: 1.3px;
+    margin-inline-end: 5px;
+}
+
+.edea-link {
+    margin-inline-start: 5px;
+
+    &:hover {
+        color: $clr3;
+    }
 }
 
 .footer-container {

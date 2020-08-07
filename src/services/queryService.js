@@ -6,11 +6,14 @@ export default {
 
 function saveSearchQueries(query) {
     let lastQueries = storageService.load('lastQueries');
-    const queryObj = {query, key: _getRandomKey()}
+    const queryObj = { query, key: _getRandomKey() }
     if (!lastQueries) {
         lastQueries = [queryObj];
     } else {
         lastQueries.unshift(queryObj);
+    }
+    if (lastQueries.length > 5) {
+        lastQueries.splice(lastQueries.length - 1, 1);
     }
     storageService.store('lastQueries', lastQueries);
 }
