@@ -27,8 +27,8 @@
     background-color: rgba(0, 0, 0, 0.74);
     color: white;
     padding: 0 10px;
-}
 
-.preview-screen:hover {
-    opacity: 1;
+    &:hover {
+        opacity: 1;
+    }
 }

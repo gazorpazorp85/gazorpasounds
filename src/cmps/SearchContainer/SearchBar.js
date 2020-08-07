@@ -20,8 +20,8 @@ export default function SearchBar({ onSetQuery, showSearch }) {
                 <input id="search-bar" type="text" placeholder="Search" value={searchQuery}
                     onChange={inputChange} onKeyPress={checkKey} />
                 <span className="search-bar-icon"></span>
-                <div className="btn uppercase pointer" onClick={showSearch}>
-                    <div>set</div>
+                <div className="btn search-btn" onClick={showSearch}>
+                    <div>go</div>
                 </div>
             </div>
         </div>

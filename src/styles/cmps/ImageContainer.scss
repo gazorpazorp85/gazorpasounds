@@ -1,0 +1,23 @@
+.image-container {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.image-screen {
+    opacity: 0;
+    position: absolute;
+    height: 500px;
+    width: 500px;
+    background-color: rgba(0, 0, 0, 0.74);
+    color: white;
+    padding: 0 10px;
+
+    &:hover {
+        opacity: 1;
+    }
+
+    .MuiSvgIcon-root {
+        height: 100%;
+        width: 100%;
+    }
+}

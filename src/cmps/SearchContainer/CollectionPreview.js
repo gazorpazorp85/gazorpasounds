@@ -3,8 +3,8 @@ import React from 'react';
 import defaultImg from '../../assets/icons/noartwork.png'
 
 export default function CollectionPreview({ isListViewOn, setCurrTrack, setNavigation, track }) {
-
-    const img = track.artwork_url ? track.artwork_url : defaultImg;
+    const regex = /large/gi;
+    const img = track.artwork_url ? track.artwork_url.replace(regex, 't200x200') : defaultImg;
     const title = `${track.user.username} - ${track.title}`;
     const formatedTitle = (title.length > 70) ? title.substring(0, 65) + '...' : title;
 
