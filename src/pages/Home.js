@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { CSSTransition, SwitchTransition } from 'react-transition-group';
 
 import ImageContainer from '../cmps/ImageContainer';
@@ -26,16 +26,17 @@ export default function Home() {
 
     const showSearch = async () => {
         queryService.saveSearchQueries(query);
+        setNavigation('search');
+        setInTransition(!inTransition);
         try {
             const result = await soundService.getTracks(query);
             const { collection, next_href } = result;
             setCollection(collection);
             setNextHref(next_href);
-            setNavigation('search');
-            setInTransition(!inTransition);
         } catch (err) {
             console.log(err);
         }
+        
     }
 
     const goToHistory = () => {
@@ -44,18 +45,26 @@ export default function Home() {
     }
 
     const showHistoryQuery = async () => {
+        setNavigation('search');
+        setInTransition(!inTransition);
         try {
             const result = await soundService.getTracks(historyQuery);
             const { collection, next_href } = result;
             setCollection(collection);
             setNextHref(next_href);
-            setNavigation('search');
-            setInTransition(!inTransition);
             setHistoryQuery('');
         } catch (err) {
             console.log(err);
         }
     }
+
+    useEffect(() => {
+        if (!historyQuery) return;
+        showHistoryQuery();
+    }, [historyQuery])
+
+    console.log('historyQuery: ', historyQuery);
+    console.log('collection: ', collection);
 
     return (
         <div className="flex full column main-container home">

@@ -1,10 +1,18 @@
 .view-icon-container {
     height: 42px;
     width: 42px;
-    
+    margin-inline-start: 10px;
+
     .MuiSvgIcon-root {
         height: 100%;
         width: 100%;
+    }
+
+    &.selected {
+        cursor: default;
+        .MuiSvgIcon-root {
+            fill: $clr3;
+        }
     }
 
     .MuiSvgIcon-root:hover {
@@ -17,3 +25,9 @@
     text-decoration: underline;
     margin-inline-start: 15px;
 }
+
+// @include for-mobile-wide-layout {
+//     .search-container {
+//         overflow-y: auto;
+//     }
+// }

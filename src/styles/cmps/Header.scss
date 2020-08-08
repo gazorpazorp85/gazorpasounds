@@ -1,9 +1,9 @@
-// .header-container {
-//     justify-content: center;
-// }
+.header-container {
+    padding: 10px;
+}
 
 .header-logo-container {
-    padding: 10px 30px;
+    padding: 0 20px;
     img {
         height: 67px;
         width: 60px;
@@ -13,4 +13,18 @@
 .app-title-container {
     font-family: luckiest-guy;
     font-size: rem(50px);
+}
+
+@include for-mobile-wide-layout {
+
+    .header-logo-container {
+        img {
+            height: 47px;
+            width: 40px;
+        }
+    } 
+    
+    .app-title-container {
+        font-size: rem(38px); 
+    }
 }

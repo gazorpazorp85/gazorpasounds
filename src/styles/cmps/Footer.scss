@@ -72,17 +72,23 @@
 }
 
 @include for-mobile-wide-layout {
+    .footer-container {
+        height: 100px;
+    }
+
     .footer-subcontainer {
         font-size: rem(14px);
         margin-top: 5px;
     }
     .social-icons-container {
         width: unset;
+        margin-inline-start: unset;
+        margin-top: 35px;
     }
     .credit-container {
-        text-align: center;
         margin-top: unset;
         margin-bottom: 10px;
+        flex-direction: column;
     }
 }
 

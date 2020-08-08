@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import ListIcon from '@material-ui/icons/List';
 import ViewModuleIcon from '@material-ui/icons/ViewModule';
 
+import Loading from './Loading';
 import CollectionList from './SearchContainer/CollectionList';
 
 import soundService from '../services/soundService';
@@ -32,7 +33,7 @@ export default function SearchContainer({ collection, inTransition, nextHref, se
     }
 
     return (
-        <div className="flex column">
+        collection ? <div className="flex column search-container">
             <CollectionList
                 collection={collection}
                 inTransition={inTransition}
@@ -44,13 +45,13 @@ export default function SearchContainer({ collection, inTransition, nextHref, se
                 {nextHref && <div className="btn next" onClick={goToNextPage}>
                     <div>next</div>
                 </div>}
-                <div className="pointer view-icon-container" onClick={() => toggleViewList('list')}>
+                <div className={`pointer view-icon-container ${isListViewOn ? 'selected' : ''}`} onClick={() => toggleViewList('list')}>
                     <ListIcon />
                 </div>
-                <div className="pointer view-icon-container" onClick={() => toggleViewList('tiles')}>
+                <div className={`pointer view-icon-container ${!isListViewOn ? 'selected' : ''}`} onClick={() => toggleViewList('tiles')}>
                     <ViewModuleIcon />
                 </div>
             </div>
-        </div>
+        </div> : <Loading />
     )
 }

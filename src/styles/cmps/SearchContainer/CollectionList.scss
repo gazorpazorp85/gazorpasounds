@@ -15,3 +15,14 @@
     margin: 10px 0px;
     flex-wrap: wrap;
 }
+
+@include for-mobile-wide-layout {
+    .tiles {
+        min-height: 220px;
+        max-height: 500px;
+    }
+
+    .list {
+        max-height: 360px;
+    }
+}

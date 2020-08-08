@@ -15,20 +15,18 @@ export default function CollectionPreview({ inTransition, isListViewOn, setCurrT
     }
 
     return (
-        <div className="flex pointer" onClick={() => clickHandler(track)}>
-            {isListViewOn ?
-                <div className="flex align-center title-container">
-                    <div>
-                        {formatedTitle}
-                    </div>
-                </div> :
-                <div className="flex img-container">
-                    <div className="flex align-center preview-screen">
-                        <div>{formatedTitle}</div>
-                    </div>
-                    <img src={img} alt={title} height="200px" width="200px" />
+        isListViewOn ?
+            <div className="flex align-center pointer title-container" onClick={() => clickHandler(track)}>
+                <div>
+                    {formatedTitle}
                 </div>
-            }
-        </div>
+            </div> :
+            <div className="flex pointer img-container" onClick={() => clickHandler(track)}>
+                {window.innerWidth > 460 && <div className="flex align-center preview-screen">
+                    <div className="preview-screen-title">{formatedTitle}</div>
+                </div>}
+                <img src={img} alt={title} />
+            </div>
+
     )
 }

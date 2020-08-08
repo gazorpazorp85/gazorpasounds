@@ -4,7 +4,7 @@ import headerLogo from '../assets/img/small-logo-white.png';
 
 export default function Header() {
     return (
-        <div className="flex">
+        <div className="flex header-container">
             <div className="header-logo-container">
                 <img src={headerLogo} alt=""/>
             </div>

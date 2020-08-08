@@ -2,14 +2,6 @@
     width: 100%;
 }
 
-// @include for-mobile-wide-layout {
-//     .logo-container {
-//         height: 150px;
-//         width: 240px;
-//         background-size: contain;
-//     }
-// }
-
 .cmp-animation-enter {
     opacity: 0;
 }
@@ -24,4 +16,10 @@
 .cmp-animation-exit-active {
     opacity: 0;
     transition: opacity 700ms;
+}
+
+@include for-mobile-wide-layout {
+    .home{
+        overflow: none;
+    }
 }

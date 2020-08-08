@@ -8,7 +8,6 @@ export default function RecentSearchesContainer({ setHistoryQuery, showHistoryQu
 
     const clickHandler = (query) => {
         setHistoryQuery(query);
-        showHistoryQuery();
     }
 
     return (

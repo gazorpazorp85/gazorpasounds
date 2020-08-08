@@ -5,7 +5,7 @@
     min-width: 70%;
     height: 40px;
     border-radius: 4px;
-    padding-inline-start: 10px;
+    padding: 10px;
     margin-top: 10px;
 
     &:hover {
@@ -30,5 +30,24 @@
 
     &:hover {
         opacity: 1;
+    }
+}
+
+@include for-mobile-wide-layout {
+
+    .title-container {
+        min-width: unset;
+        max-width: 100%;
+        font-size: rem(14px);
+    }
+
+    .img-container {
+        height: 110px;
+        width: 110px;
+
+        & img {
+            height: 110px;
+            width: 110px;
+        }
     }
 }
