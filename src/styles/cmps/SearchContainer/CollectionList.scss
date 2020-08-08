@@ -2,8 +2,13 @@
     margin-inline-end: 15px;
 }
 
+.tiles {
+    min-height: 420px;
+}
+
 .list {
     flex-direction: column;
+    min-height: 320px;
 }
 
 .collection-list-container {

@@ -26,12 +26,11 @@ export default function ImageContainer({ track }) {
     return (
         <div>
             <div className="flex center pointer image-container" onClick={playTrack}>
-                <div>
-                    {/* <div className="flex center align-center image-screen">
+                {/* <div className="flex center align-center image-screen">
                         <div>{isPlayerShown ? <PlayIcon /> : <PauseIcon />}</div>
                     </div> */}
-                    <img src={img} alt="" />
-                </div>
+                <img src={img} alt="" />
+
             </div>
             {isPlayerShown && <iframe ref={inputEl} width="100%" height="166" scrolling="no" frameBorder="no" allow="autoplay" src={url}>
             </iframe>}

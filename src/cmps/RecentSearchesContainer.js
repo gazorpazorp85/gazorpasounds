@@ -2,9 +2,14 @@ import React from 'react';
 
 import storageService from '../services/storageService';
 
-export default function RecentSearchesContainer({ setHistoryQuery }) {
+export default function RecentSearchesContainer({ setHistoryQuery, showHistoryQuery }) {
 
     const lastQueries = storageService.load('lastQueries');
+
+    const clickHandler = (query) => {
+        setHistoryQuery(query);
+        showHistoryQuery();
+    }
 
     return (
         <div className="flex full column recent-searches-container">
@@ -12,7 +17,7 @@ export default function RecentSearchesContainer({ setHistoryQuery }) {
             {lastQueries.map((query) => {
                 return (
                     <div className="search-item" key={query.key}>
-                        <div className="pointer" onClick={() => setHistoryQuery(query.query)}>
+                        <div className="pointer" onClick={() => clickHandler(query.query)}>
                             {query.query}
                         </div>
                     </div>

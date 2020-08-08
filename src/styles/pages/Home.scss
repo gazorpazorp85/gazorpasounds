@@ -2,19 +2,26 @@
     width: 100%;
 }
 
-.logo-container {
-    align-self: center;
-    height: 250px;
-    width: 400px;
-    background-repeat: no-repeat;
-    background-size: 400px;
-    margin-top: 40px;
+// @include for-mobile-wide-layout {
+//     .logo-container {
+//         height: 150px;
+//         width: 240px;
+//         background-size: contain;
+//     }
+// }
+
+.cmp-animation-enter {
+    opacity: 0;
 }
 
-@include for-mobile-wide-layout {
-    .logo-container {
-        height: 150px;
-        width: 240px;
-        background-size: contain;
-    }
+.cmp-animation-enter-active {
+    opacity: 1;
+    transition: opacity 700ms;
+}
+.cmp-animation-exit {
+    opacity: 1;
+}
+.cmp-animation-exit-active {
+    opacity: 0;
+    transition: opacity 700ms;
 }

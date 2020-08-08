@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 
-export default function SearchBar({ onSetQuery, showSearch }) {
+export default function SearchBar({ setQuery, showSearch }) {
 
     const [searchQuery, setSearchQuery] = useState('');
 
     const inputChange = (ev) => {
         const { value } = ev.target;
         setSearchQuery(value);
-        onSetQuery(value);
+        setQuery(value);
     }
 
     const checkKey = (ev) => {

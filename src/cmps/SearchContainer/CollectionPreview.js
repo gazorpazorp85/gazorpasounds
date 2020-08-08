@@ -2,7 +2,7 @@ import React from 'react';
 
 import defaultImg from '../../assets/icons/noartwork.png'
 
-export default function CollectionPreview({ isListViewOn, setCurrTrack, setNavigation, track }) {
+export default function CollectionPreview({ inTransition, isListViewOn, setCurrTrack, setInTransition, setNavigation, track }) {
     const regex = /large/gi;
     const img = track.artwork_url ? track.artwork_url.replace(regex, 't200x200') : defaultImg;
     const title = `${track.user.username} - ${track.title}`;
@@ -10,6 +10,7 @@ export default function CollectionPreview({ isListViewOn, setCurrTrack, setNavig
 
     const clickHandler = (track) => {
         setCurrTrack(track);
+        setInTransition(!inTransition)
         setNavigation('image');
     }
 
