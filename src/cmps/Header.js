@@ -9,7 +9,7 @@ export default function Header() {
                 <img src={headerLogo} alt="" />
             </div>
             <div className="flex center align-center app-title-container">
-                <div className="uppercase">GazorpaSounds</div>
+                <div className="uppercase">gazorpasounds</div>
             </div>
         </div>
     )
