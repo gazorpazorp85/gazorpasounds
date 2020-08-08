@@ -20,14 +20,8 @@
     }
 }
 
-.search-history {
-    font-size: rem(14px);
-    text-decoration: underline;
-    margin-inline-start: 15px;
+.no-found-items {
+    height: 100px;
+    width: 70%;
+    margin-top: 10px;
 }
-
-// @include for-mobile-wide-layout {
-//     .search-container {
-//         overflow-y: auto;
-//     }
-// }

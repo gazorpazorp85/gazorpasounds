@@ -5,7 +5,7 @@ import CollectionPreview from './CollectionPreview';
 export default function CollectionList({ collection, inTransition, isListViewOn, setCurrTrack,setInTransition, setNavigation }) {
     const flexDirection = isListViewOn ? 'list' : 'tiles'
     return (
-        <div className={`flex collection-list-container ${flexDirection}`}>
+        <div className={`flex wrap collection-list-container ${flexDirection}`}>
             {collection.map(track => {
                 return <CollectionPreview
                     isListViewOn={isListViewOn}

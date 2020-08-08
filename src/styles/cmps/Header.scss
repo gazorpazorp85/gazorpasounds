@@ -28,3 +28,10 @@
         font-size: rem(38px); 
     }
 }
+
+@include for-mobile-narrow-layout {
+    
+    .app-title-container {
+        font-size: rem(29px); 
+    }
+}

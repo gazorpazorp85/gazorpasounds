@@ -2,7 +2,7 @@ import React from 'react';
 
 import storageService from '../services/storageService';
 
-export default function RecentSearchesContainer({ setHistoryQuery, showHistoryQuery }) {
+export default function RecentSearchesContainer({ setHistoryQuery }) {
 
     const lastQueries = storageService.load('lastQueries');
 

@@ -6,7 +6,7 @@ export default function Header() {
     return (
         <div className="flex header-container">
             <div className="header-logo-container">
-                <img src={headerLogo} alt=""/>
+                <img src={headerLogo} alt="" />
             </div>
             <div className="flex center align-center app-title-container">
                 <div className="uppercase">GazorpaSounds</div>

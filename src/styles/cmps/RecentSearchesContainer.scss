@@ -2,10 +2,16 @@
     margin-top: 20px;
 }
 
-// .searches-title {
-//     margin-bottom: 10px;
-// }
-
 .search-item {
-    margin-top: 10px
+    background-color: $clr4;
+    color: $clr1;
+    min-width: 70%;
+    height: 40px;
+    border-radius: 4px;
+    padding: 10px;
+    margin-top: 10px;
+
+    &:hover {
+        color: $clr3;
+    }
 }

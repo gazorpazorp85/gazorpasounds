@@ -18,25 +18,37 @@ export default function Home() {
     const [currTrack, setCurrTrack] = useState('');
     const [historyQuery, setHistoryQuery] = useState('');
     const [inTransition, setInTransition] = useState(false);
-    const lastQueries = storageService.load('lastQueries');
     const [collection, setCollection] = useState('');
     const [nextHref, setNextHref] = useState('');
     const [query, setQuery] = useState('');
 
+    const lastQueries = storageService.load('lastQueries');
 
     const showSearch = async () => {
         queryService.saveSearchQueries(query);
+        _queryHandle(query);
+    }
+
+    const showHistoryQuery = () => {
+        _queryHandle(historyQuery);
+    }
+
+    const _queryHandle = async (query) => {
         setNavigation('search');
         setInTransition(!inTransition);
         try {
             const result = await soundService.getTracks(query);
             const { collection, next_href } = result;
+            if (collection.length === 0) {
+                setNavigation('not-found');
+                setInTransition(!inTransition);
+                return;
+            }
             setCollection(collection);
             setNextHref(next_href);
         } catch (err) {
             console.log(err);
         }
-        
     }
 
     const goToHistory = () => {
@@ -44,31 +56,14 @@ export default function Home() {
         setInTransition(!inTransition);
     }
 
-    const showHistoryQuery = async () => {
-        setNavigation('search');
-        setInTransition(!inTransition);
-        try {
-            const result = await soundService.getTracks(historyQuery);
-            const { collection, next_href } = result;
-            setCollection(collection);
-            setNextHref(next_href);
-            setHistoryQuery('');
-        } catch (err) {
-            console.log(err);
-        }
-    }
-
     useEffect(() => {
         if (!historyQuery) return;
         showHistoryQuery();
     }, [historyQuery])
 
-    console.log('historyQuery: ', historyQuery);
-    console.log('collection: ', collection);
-
     return (
         <div className="flex full column main-container home">
-            <div className="flex">
+            <div className="flex search-bar-container">
                 <SearchBar setQuery={setQuery} showSearch={showSearch} />
                 {lastQueries &&
                     <div
@@ -96,6 +91,10 @@ export default function Home() {
                                 setNextHref={setNextHref}
                                 setInTransition={setInTransition}
                                 setNavigation={setNavigation} />}
+                        {(navigation === 'not-found') &&
+                            <div className="capitalize no-found-items">
+                                no items found. please try to search for something else.
+                            </div>}
                         {(navigation === 'home') &&
                             <div className="flex full center align-center logo-container">
                                 <img src={mainLogo} alt="gazorpasounds" />

@@ -2,6 +2,12 @@
     width: 100%;
 }
 
+.search-history {
+    font-size: rem(14px);
+    text-decoration: underline;
+    margin-inline-start: 15px;
+}
+
 .cmp-animation-enter {
     opacity: 0;
 }
@@ -19,7 +25,24 @@
 }
 
 @include for-mobile-wide-layout {
-    .home{
+    .home {
         overflow: none;
+    }
+}
+
+@include for-mobile-narrow-layout {
+    .search-bar-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .search-history {
+        margin-top: 10px;
+    }
+
+    .logo-container {
+        img {
+            width: 350px;
+        }
     }
 }

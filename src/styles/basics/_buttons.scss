@@ -17,4 +17,9 @@
         width: fit-content;
         padding: 0 10px;
     }
+
+    &:hover {
+        background-color: #ff5f12;
+        transition: 0.4s;
+    }
 }
